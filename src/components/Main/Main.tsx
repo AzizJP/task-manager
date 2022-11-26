@@ -37,22 +37,24 @@ const Main: FC = memo(() => {
 
   return (
     <main className="main">
-      <h2 className="main__title">Projects</h2>
-      <SearchForm handleAddProject={handleAddProject} />
-      <div className="main__projects">
-        {projects.length === 0 ? (
-          <h3 className="main__no-projects-message">
-            Add projects to view them here
-          </h3>
-        ) : (
-          projects.map((project: ProjectState) => (
-            <ProjectCard
-              project={project}
-              key={project.id}
-              handleDeleteProject={handleDeleteProject}
-            />
-          ))
-        )}
+      <div className="main__wrapper">
+        <h2 className="main__title">Projects</h2>
+        <SearchForm handleAddProject={handleAddProject} />
+        <div className="main__projects">
+          {projects.length === 0 ? (
+            <h3 className="main__no-projects-message">
+              Add projects to view them here
+            </h3>
+          ) : (
+            projects.map((project: ProjectState) => (
+              <ProjectCard
+                project={project}
+                key={project.id}
+                handleDeleteProject={handleDeleteProject}
+              />
+            ))
+          )}
+        </div>
       </div>
     </main>
   );

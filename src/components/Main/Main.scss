@@ -3,10 +3,15 @@ $layout-breakpoint-medium: 1280px;
 
 .main {
   display: flex;
-  flex-direction: column;
-  padding: 2rem 0;
   flex-grow: 1;
-  gap: 1rem;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    flex-grow: 1;
+    gap: 1rem;
+  }
 
   &__title {
     margin: 0;
@@ -37,8 +42,10 @@ $layout-breakpoint-medium: 1280px;
 
 @media screen and (min-width: $layout-breakpoint-small) {
   .main {
-    padding: 2.5rem 0;
-    gap: 1.5rem;
+    &__wrapper {
+      padding: 2.5rem 0;
+      gap: 1.5rem;
+    }
 
     &__title {
       font-size: 1.2rem;
@@ -57,8 +64,10 @@ $layout-breakpoint-medium: 1280px;
 
 @media screen and (min-width: $layout-breakpoint-medium) {
   .main {
-    padding: 3rem 0;
-    gap: 2rem;
+    &__wrapper {
+      padding: 3rem 0;
+      gap: 2rem;
+    }
 
     &__title {
       font-size: 1.5rem;

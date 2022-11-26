@@ -1,3 +1,6 @@
+$layout-breakpoint-small: 768px;
+$layout-breakpoint-medium: 1280px;
+
 .page {
   display: flex;
   flex-direction: column;
@@ -11,7 +14,10 @@
   color: white;
 
   &__wrapper {
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    min-height: 100vh;
   }
 }
 
@@ -20,7 +26,21 @@
   box-shadow: 0 5px 30px #2be080;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: $layout-breakpoint-small) {
+  .page {
+    &__wrapper {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-medium) {
+  .page {
+    &__wrapper {
+      width: 70%;
+    }
+  }
+
   .link_hover:before {
     content: '';
     width: 100%;
