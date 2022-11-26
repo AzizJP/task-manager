@@ -1,0 +1,58 @@
+$layout-breakpoint-small: 768px;
+$layout-breakpoint-medium: 1280px;
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -0.5rem;
+    background-color: #f4f4f430;
+  }
+
+  &:last-child:before {
+    content: none;
+  }
+
+  &__link-wrapper {
+    flex-grow: 1;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: white;
+  }
+
+  &__button {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-small) {
+  .project {
+    &__link {
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-medium) {
+  .project {
+    &__link {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+$layout-breakpoint-small: 768px;
+$layout-breakpoint-medium: 1280px;
+
+.form__input {
+  border: none;
+  flex-grow: 1;
+  margin: 0.8rem 0 0.8rem 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  background-color: #0d1117;
+  outline: none;
+  color: white;
+  
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1.5px solid #f4f4f430;
+    border-radius: 0.5rem;
+    gap: 1rem;
+  }
+
+  &::placeholder {
+    color: #f4f4f460;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-small) {
+  .form__input {
+    margin-left: 0.7rem;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-medium) {
+  .form__input {
+    margin-left: 0.9rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+}

@@ -1,0 +1,50 @@
+$layout-breakpoint-small: 768px;
+$layout-breakpoint-medium: 1280px;
+
+.button {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.2rem;
+  max-width: 3.8rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: #3456f3;
+  font-weight: 500;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+    background-color: #f4f4f430;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-small) {
+  .button {
+    margin: 0.7rem 0.7rem 0.7rem 0;
+    padding: 0.5rem;
+    max-width: 6rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-medium) {
+  .button {
+    margin: 0.9rem 0.9rem 0.9rem 0;
+    font-size: 1rem;
+    
+    &_hover {
+      transition: background-color linear 0.2s;
+      &:disabled:hover {
+        background-color: #f4f4f430;
+      }
+    }
+    
+    &_hover:hover {
+      background-color: #2be080;
+      transition: background-color linear 0.2s;
+    }
+  }
+}
