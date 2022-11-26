@@ -4,6 +4,7 @@
 
 ![HTML5](https://img.shields.io/badge/-HTML5-4A4A4A?style=for-the-badge&logo=HTML5&logoColor=FF7600)
 ![CSS3](https://img.shields.io/badge/-CSS3-4A4A4A?style=for-the-badge&logo=CSS3&logoColor=5871CD)
+![SASS](https://img.shields.io/badge/-Sass-4A4A4A?style=for-the-badge&logo=SASS&logoColor=EF9AEB)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-4A4A4A?style=for-the-badge&logo=JavaScript&logoColor=FFE300)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-4A4A4A?style=for-the-badge&logo=TypeScript&logoColor=4895DB)
 ![React](https://img.shields.io/badge/-React-4A4A4A?style=for-the-badge&logo=React&logoColor=73C6E5)
@@ -38,13 +39,14 @@
 - Проект написан на JS с использованием библиотеки React
 - Типизация с помощью TypeScript
 - Язык для структурирования и представления содержимого - HTML5
+- Расширение CSS3 - Sass
 - Сборка проекта с помощью Webpack
 - Компилятор для более старых версий ES - Babel
-- Реализован роутинг с помощью React Router
+- Реализован роутинг с помощью React Router 6
 
 **Функционал**
 
-- Создание проекта
+- Создание и завершение проекта
 - Добавление и удаление задачи
 - Отслеживание задачи по времени
 - Редактирование описания, заголовка задачи, дату окончания задачи
