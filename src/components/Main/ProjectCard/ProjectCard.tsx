@@ -13,18 +13,18 @@ interface ProjectCardProp {
 const ProjectCard: FC<ProjectCardProp> = memo(
   ({project, handleDeleteProject}) => {
     return (
-      <div className="project" key={project.id}>
-        <div className="project__link-wrapper">
+      <div className="project-card" key={project.id}>
+        <div className="project-card__link-wrapper">
           <Link
             to={`/project/${project.title}-${project.id}`}
-            className="project__link link_hover"
+            className="project-card__link link_hover"
           >
             {project.title}
           </Link>
         </div>
         <button
           onClick={() => handleDeleteProject(project.id)}
-          className="button button_hover project__button"
+          className="button button_hover project-card__button"
           type="button"
         >
           Close project

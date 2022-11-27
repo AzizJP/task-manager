@@ -1,7 +1,7 @@
 $layout-breakpoint-small: 768px;
 $layout-breakpoint-medium: 1280px;
 
-.project {
+.project-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +40,7 @@ $layout-breakpoint-medium: 1280px;
 }
 
 @media screen and (min-width: $layout-breakpoint-small) {
-  .project {
+  .project-card {
     &__link {
       font-size: 1rem;
       line-height: 1.2rem;
@@ -49,7 +49,7 @@ $layout-breakpoint-medium: 1280px;
 }
 
 @media screen and (min-width: $layout-breakpoint-medium) {
-  .project {
+  .project-card {
     &__link {
       font-size: 1.2rem;
       line-height: 1.5rem;
