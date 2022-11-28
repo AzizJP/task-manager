@@ -7,7 +7,7 @@ import {ProjectState} from '../types';
 
 interface ProjectCardProp {
   project: ProjectState;
-  handleDeleteProject(id: number): void;
+  handleDeleteProject(id: string): void;
 }
 
 const ProjectCard: FC<ProjectCardProp> = memo(
@@ -16,7 +16,7 @@ const ProjectCard: FC<ProjectCardProp> = memo(
       <div className="project-card" key={project.id}>
         <div className="project-card__link-wrapper">
           <Link
-            to={`/project/${project.title}-${project.id}`}
+            to={`/project/${project.id}`}
             className="project-card__link link_hover"
           >
             {project.title}

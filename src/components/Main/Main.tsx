@@ -25,7 +25,7 @@ const Main: FC = memo(() => {
   );
 
   const handleDeleteProject = useCallback(
-    (id: number): void => {
+    (id: string): void => {
       const copyProjects = [...projects];
       const projectIndex = copyProjects.findIndex(el => el.id === id);
       copyProjects.splice(projectIndex, 1);
@@ -39,7 +39,11 @@ const Main: FC = memo(() => {
     <main className="main">
       <div className="main__wrapper">
         <h2 className="main__title">Projects</h2>
-        <SearchForm handleAddProject={handleAddProject} />
+        <SearchForm
+          handleAdd={handleAddProject}
+          placeholder="Enter project title"
+          buttonText="Add project"
+        />
         <div className="main__projects">
           {projects.length === 0 ? (
             <h3 className="main__no-projects-message">
