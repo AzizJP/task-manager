@@ -2,7 +2,7 @@
   "name": "task-manager",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/AzizJP/task-manager",
+  "homepage": "https://azizjp.github.io/task-manager/",
   "scripts": {
     "build": "rm -rf dist && webpack --mode production",
     "dev": "webpack serve",
