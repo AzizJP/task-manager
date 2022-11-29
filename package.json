@@ -6,7 +6,9 @@
     "build": "rm -rf dist && webpack --mode production",
     "dev": "webpack serve",
     "lint": "npm run lint-check",
-    "lint-check": "rm -rf dist && tsc -p ./tsconfig.json && eslint \"src/**/*.{ts,tsx}\" --quiet --fix"
+    "lint-check": "rm -rf dist && tsc -p ./tsconfig.json && eslint \"src/**/*.{ts,tsx}\" --quiet --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "azizjp",
   "license": "ISC",
