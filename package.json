@@ -2,6 +2,7 @@
   "name": "task-manager",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://azizjp.github.io/task-manager/",
   "main": "index.tsx",
   "scripts": {
     "build": "rm -rf dist && webpack --mode production",
@@ -11,16 +12,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AzizJP/task-manager.git"
-  },
   "author": "azizjp",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AzizJP/task-manager/issues"
-  },
-  "homepage": "https://github.com/AzizJP/task-manager#readme",
   "dependencies": {
     "@svgr/webpack": "^6.5.0",
     "dayjs": "^1.11.6",
