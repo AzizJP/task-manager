@@ -36,8 +36,18 @@ module.exports = {
         use: ['ts-loader'],
       },
       {
-        test: /\.(png|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[name].[hash][ext]',
+        },
+      },
+      {
+        test: /\.(woff|woff2|ttf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name].[hash][ext]',
+        },
       },
       {
         test: /\.svg$/,
@@ -87,14 +97,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Task manager',
-      filename: 'index.html',
       template: path.resolve(__dirname, './public/index.html'),
-      meta: {
-        viewport:
-          'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover',
-        description: 'Task manager',
-      },
     }),
     new MiniCssExtractPlugin(),
   ],
