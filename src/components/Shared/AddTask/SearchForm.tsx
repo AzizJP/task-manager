@@ -14,13 +14,21 @@ import './SearchForm.scss';
 import {ProjectState} from './types';
 
 interface MainProp {
-  handleAdd?(FormsState: ProjectState): void;
+  handleAdd?(title: string): void;
   placeholder?: string;
   buttonText?: string;
+  classNameInput?: string;
+  classNameButton?: string;
 }
 
 const SearchForm: FC<MainProp> = memo(
-  ({handleAdd, placeholder, buttonText}) => {
+  ({
+    handleAdd,
+    placeholder,
+    buttonText,
+    classNameInput,
+    classNameButton,
+  }) => {
     const [newProject, setNewProject] = useState<ProjectState>({
       title: '',
     });
@@ -35,7 +43,7 @@ const SearchForm: FC<MainProp> = memo(
     const handleSubmit = useCallback(
       (evt: FormEvent<HTMLFormElement>): void => {
         evt.preventDefault();
-        handleAdd(newProject);
+        handleAdd(newProject.title);
         setNewProject({title: ''});
       },
       [newProject, handleAdd],
@@ -45,12 +53,16 @@ const SearchForm: FC<MainProp> = memo(
       <form className="form__input-wrapper" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="form__input"
+          className={`form__input ${classNameInput}`}
           placeholder={placeholder}
           value={newProject.title}
           onChange={handleHeaderChange}
         />
-        <Button title={newProject.title} text={buttonText} />
+        <Button
+          title={newProject.title}
+          text={buttonText}
+          classNameButton={classNameButton}
+        />
       </form>
     );
   },

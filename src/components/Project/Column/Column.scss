@@ -1,0 +1,64 @@
+$layout-breakpoint-small: 768px;
+$layout-breakpoint-medium: 1280px;
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 22rem;
+  min-height: 10rem;
+  border: 1px solid #f4f4f430;
+  border-radius: 0.5rem;
+  background-color: #090c11;
+  gap: 1rem;
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: white;
+  }
+  
+  &__tasks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  &__input {
+    background-color: #090c11;
+  }
+
+  &__button {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.2rem;
+    max-width: 3.8rem;
+    font-weight: 500;
+    font-size: 0.7rem;
+    line-height: 1rem;
+  }
+} 
+
+@media screen and (min-width: $layout-breakpoint-small) {
+  .column {
+    margin: 0;
+    &__input {
+      margin: 0.8rem 0 0.8rem 0.5rem;
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-medium) {
+  .column {
+    &__input {
+      margin: 0.8rem 0 0.8rem 0.5rem;
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
+  }
+}

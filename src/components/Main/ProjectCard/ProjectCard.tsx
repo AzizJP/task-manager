@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 
 import './ProjectCard.scss';
 
-import {ProjectState} from '../types';
+import {ProjectCardDTO} from '../types';
 
 interface ProjectCardProp {
-  project: ProjectState;
+  project: ProjectCardDTO;
   handleDeleteProject(id: string): void;
 }
 

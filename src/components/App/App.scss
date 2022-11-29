@@ -35,12 +35,6 @@ $layout-breakpoint-medium: 1280px;
 }
 
 @media screen and (min-width: $layout-breakpoint-medium) {
-  .page {
-    &__wrapper {
-      width: 70%;
-    }
-  }
-
   .link_hover:before {
     content: '';
     width: 100%;

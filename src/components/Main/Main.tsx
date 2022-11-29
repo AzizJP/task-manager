@@ -5,7 +5,7 @@ import SearchForm from '../Shared/AddTask/SearchForm';
 import './Main.scss';
 import ProjectCard from './ProjectCard/ProjectCard';
 
-import {ProjectState} from './types';
+import {ProjectCardDTO} from './types';
 
 const Main: FC = memo(() => {
   const [projects, setProjects] = useState(
@@ -13,10 +13,10 @@ const Main: FC = memo(() => {
   );
 
   const handleAddProject = useCallback(
-    (newProject: ProjectState) => {
+    (title: string) => {
       const newState = [
         ...projects,
-        {...newProject, id: `${Math.floor(Math.random() * 1000000)}`},
+        {title, id: `${Math.floor(Math.random() * 1000000)}`},
       ];
       setProjects(newState);
       localStorage.setItem('projects', JSON.stringify(newState));
@@ -50,7 +50,7 @@ const Main: FC = memo(() => {
               Add projects to view them here
             </h3>
           ) : (
-            projects.map((project: ProjectState) => (
+            projects.map((project: ProjectCardDTO) => (
               <ProjectCard
                 project={project}
                 key={project.id}
