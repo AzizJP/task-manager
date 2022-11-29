@@ -96,9 +96,6 @@ module.exports = {
         description: 'Task manager',
       },
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
+    new MiniCssExtractPlugin(),
   ],
 };
