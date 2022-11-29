@@ -96,3 +96,5 @@ server/
 # Editors
 .idea
 .vscode
+
+src/components/Project/Column/Task/FileUpload

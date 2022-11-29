@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@svgr/webpack": "^6.5.0",
+    "dayjs": "^1.11.6",
     "depcheck": "^1.4.3",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",

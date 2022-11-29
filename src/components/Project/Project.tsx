@@ -20,6 +20,20 @@ const Project: FC = memo(() => {
       ProjectInitialData,
   );
 
+  const handleUpdateProject = useCallback(
+    (newState: ProjectType) => {
+      setProject(newState);
+      const projectTasks =
+        JSON.parse(localStorage.getItem('projectTasks')) || {};
+      projectTasks[id] = newState;
+      localStorage.setItem(
+        'projectTasks',
+        JSON.stringify(projectTasks),
+      );
+    },
+    [id],
+  );
+
   const handleAddTask = useCallback(
     (title?: string, type?: ColumnType) => {
       const newProject = {...project};
@@ -27,16 +41,21 @@ const Project: FC = memo(() => {
         id: `${Math.floor(Math.random() * 1000000)}`,
         title,
       });
-      setProject(newProject);
-      const projectTasks =
-        JSON.parse(localStorage.getItem('projectTasks')) || {};
-      projectTasks[id] = newProject;
-      localStorage.setItem(
-        'projectTasks',
-        JSON.stringify(projectTasks),
-      );
+      handleUpdateProject(newProject);
     },
-    [project, id],
+    [project, handleUpdateProject],
+  );
+
+  const handleDeleteTask = useCallback(
+    (taskId: string, type?: ColumnType) => {
+      const newProject = {...project};
+      const taskIndex = newProject[type].tasks.findIndex(
+        el => el.id === taskId,
+      );
+      newProject[type].tasks.splice(taskIndex, 1);
+      handleUpdateProject(newProject);
+    },
+    [project, handleUpdateProject],
   );
 
   const handleOnDragEnd = useCallback(
@@ -73,14 +92,7 @@ const Project: FC = memo(() => {
           [sourceDroppableId]: newColumn,
         };
 
-        setProject(newState);
-        const projectTasks =
-          JSON.parse(localStorage.getItem('projectTasks')) || {};
-        projectTasks[id] = newState;
-        localStorage.setItem(
-          'projectTasks',
-          JSON.stringify(projectTasks),
-        );
+        handleUpdateProject(newState);
         return;
       }
 
@@ -103,17 +115,9 @@ const Project: FC = memo(() => {
         [sourceDroppableId]: newStart,
         [destinationDroppableId]: newFinish,
       };
-      setProject(newState);
-      const projectTasks =
-        JSON.parse(localStorage.getItem('projectTasks')) || {};
-      projectTasks[id] = newState;
-      localStorage.setItem(
-        'projectTasks',
-        JSON.stringify(projectTasks),
-      );
-      setProject(newState);
+      handleUpdateProject(newState);
     },
-    [project, id],
+    [project, handleUpdateProject],
   );
 
   return (
@@ -129,15 +133,21 @@ const Project: FC = memo(() => {
           <div className="project__sections">
             <Column
               handleAddTask={handleAddTask}
+              handleDeleteTask={handleDeleteTask}
               columnData={project[ColumnType.QUEUE]}
+              handleUpdateProject={handleUpdateProject}
             />
             <Column
               handleAddTask={handleAddTask}
+              handleDeleteTask={handleDeleteTask}
               columnData={project[ColumnType.DEVELOPMENT]}
+              handleUpdateProject={handleUpdateProject}
             />
             <Column
               handleAddTask={handleAddTask}
+              handleDeleteTask={handleDeleteTask}
               columnData={project[ColumnType.DONE]}
+              handleUpdateProject={handleUpdateProject}
             />
           </div>
         </div>

@@ -1,3 +1,5 @@
+import {TaskTypes} from './Task/types';
+
 export enum ColumnType {
   QUEUE = 'QUEUE',
   DEVELOPMENT = 'DEVELOPMENT',
@@ -9,12 +11,7 @@ export type ProjectType = Record<ColumnType, ColumnProps>;
 export interface ColumnProps {
   title: string;
   id: ColumnType;
-  tasks: Array<TaskProps>;
-}
-
-interface TaskProps {
-  title: string;
-  id: string;
+  tasks: Array<TaskTypes>;
 }
 
 export const ProjectInitialData: ProjectType = {

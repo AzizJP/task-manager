@@ -42,17 +42,6 @@ $layout-breakpoint-small: 768px;
   }
 }
 
-.task {
-  margin: 0;
-  min-height: 2rem;
-  border: 1px solid white;
-  height: 4rem;
-
-  &__title {
-    text-align: center;
-  }
-} 
-
 @media screen and (min-width: $layout-breakpoint-small) {
   .project__title {
     &-section {

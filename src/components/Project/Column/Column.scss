@@ -44,7 +44,6 @@ $layout-breakpoint-medium: 1280px;
 
 @media screen and (min-width: $layout-breakpoint-small) {
   .column {
-    margin: 0;
     &__input {
       margin: 0.8rem 0 0.8rem 0.5rem;
       font-size: 0.7rem;
